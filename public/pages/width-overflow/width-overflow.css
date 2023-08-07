@@ -1,0 +1,6 @@
+#myFrame {
+    background: #e1c9ff;
+    height: 20em;
+    display: inline-block;
+    transition: .5s ease-in-out;
+}
