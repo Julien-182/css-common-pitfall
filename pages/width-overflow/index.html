@@ -7,41 +7,43 @@
     <link rel="stylesheet" href="width-overflow.css">
 </head>
 <body>
-    <a href="../../">Back to home</a>
-    <h1>Width overflow</h1>
+    <main>
+        <a href="../../">Back to home</a>
+        <h1>Width overflow</h1>
 
-    <section class="tutorial">
-        <style contenteditable>
-#myFrame {
-    border: 1em solid red;
-    padding: 1em;
-    width: 100%;
-}
-        </style>
+        <section class="tutorial">
+            <style contenteditable>
+    #myFrame {
+        border: 1em solid red;
+        padding: 1em;
+        width: 100%;
+    }
+            </style>
 
-        <div class="lesson">
-            <p>Here is the <a href="#myFrame">situation</a>:</p>
-            <p>You want to have a full width frame with a border to put some content in. You set it a width of 100% but you notice that an horizontal scrollbar appear at the bottom of the screen.</p>
-            <p>BUT WHY ???</p>
-            <p>The issue here is that, by default, the width of an element (here <code>&lt;div&gt;</code>) is based on the <em>content</em> size.</p>
-            <p>So both <em>margin</em> and <em>border</em> widths are added to our 100% width. You can try add bigger borders and margins, you'll see that the scrollbar keep growing !</p>
-            <p>So how do I get rid of it ?</p>
-            <p>Two solution available :</p>
-            <ul>
-                <li>
-                    <p>The first one is simple math. You need to take account of the borders and margin (left and right) size in your <code>width</code> property. So 100% minus the border size.</p>
-                    <p>CSS offer the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="_blank"><code>calc()</code></a> function to calculate values with simple operation and different units</p>
-                    <p>Try the folowing code in the editor : <code>width: calc(100% - (2 * 2 * 1em));</code> (2 times 2 border/padding of 1em) and see the scrollbar disappear.</p>
-                </li>
-                <li>
-                    <p>The other solution is more elegant and maintainable : the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank"><code>box-sizing</code></a> property.</p>
-                    <p>In the first part, I mentioned that <em>by default</em>, border and margin sizes were not taken into account into the width definition. It is the default value of the property: <code>content-box</code></p>
-                    <p>BUT, you can change this default, by setting <code>border-box</code> value instead. In this mode, padin, borders, and margin size will be included in element width. Try <code>box-sizing: content-box</code> with a width of 100%</p>
-                </li>
-            </ul>
-            <p>Now you can say goodbye to unwanted scrollbars ;)</p>
-        </div>
-    </section>
+            <div class="lesson">
+                <p>Here is the <a href="#myFrame">situation</a>:</p>
+                <p>You want to have a full width frame with a border to put some content in. You set it a width of 100% but you notice that an horizontal scrollbar appear at the bottom of the screen.</p>
+                <p>BUT WHY ???</p>
+                <p>The issue here is that, by default, the width of an element (here <code>&lt;div&gt;</code>) is based on the <em>content</em> size.</p>
+                <p>So both <em>margin</em> and <em>border</em> widths are added to our 100% width. You can try add bigger borders and margins, you'll see that the scrollbar keep growing !</p>
+                <p>So how do I get rid of it ?</p>
+                <p>Two solution available :</p>
+                <ul>
+                    <li>
+                        <p>The first one is simple math. You need to take account of the borders and margin (left and right) size in your <code>width</code> property. So 100% minus the border size.</p>
+                        <p>CSS offer the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="_blank"><code>calc()</code></a> function to calculate values with simple operation and different units</p>
+                        <p>Try the folowing code in the editor : <code>width: calc(100% - (2 * 2 * 1em));</code> (2 times 2 border/padding of 1em) and see the scrollbar disappear.</p>
+                    </li>
+                    <li>
+                        <p>The other solution is more elegant and maintainable : the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank"><code>box-sizing</code></a> property.</p>
+                        <p>In the first part, I mentioned that <em>by default</em>, border and margin sizes were not taken into account into the width definition. It is the default value of the property: <code>content-box</code></p>
+                        <p>BUT, you can change this default, by setting <code>border-box</code> value instead. In this mode, padin, borders, and margin size will be included in element width. Try <code>box-sizing: border-box</code> with a width of 100%</p>
+                    </li>
+                </ul>
+                <p>Now you can say goodbye to unwanted scrollbars ;)</p>
+            </div>
+        </section>
+    </main>
 
     <div id="myFrame">
         #myFrame that I want full-width 
