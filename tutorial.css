@@ -35,6 +35,10 @@ a[href^="https://developer.mozilla.org/"]:before {
 
 /* Layout */
 
+.tutorial-page {
+    padding-bottom: 5em;
+}
+
 section.tutorial {
     display: flex;
     gap: 1em;
@@ -59,9 +63,11 @@ section.tutorial .lesson {
 style[contenteditable] {
     display: inline-block;
     padding: .5em 1em;
+    padding-bottom: 2.5em;
     margin-right: 1em;
     min-width: 50ch;
     height: fit-content;
+    box-sizing: border-box;
     position: sticky;
     top: 1em;
     flex: 1;
@@ -101,9 +107,12 @@ style[contenteditable]::before {
 }
 
 style[contenteditable]::after {
-    content: 'Alt + Enter for new line';
+    content: 'Shift + Enter for new line';
     display: inline-block;
     font-weight: normal;
     color: grey;
     font-size: .9em;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
 }

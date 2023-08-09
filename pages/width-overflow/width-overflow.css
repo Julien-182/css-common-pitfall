@@ -3,7 +3,8 @@
 }
 
 #myFrame {
-    background: #e1c9ff;
+    border-radius: .4em;
+    background: #c290e0;
     height: 20em;
     display: inline-block;
     transition: .5s ease-in-out;
