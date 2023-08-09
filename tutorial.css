@@ -1,26 +1,24 @@
 /* Common */
 code {
-    background-color: #333;
-    color: white;
+    background-color: #ddd;
     padding-inline: .5ch;
     border-radius: .2em;
     font-family: monospace;
 }
 
 a code {
-    background-color: #38346a;
+    color: #38346a;
 }
 
-a[href^="https://developer.mozilla.org/"]:before {
+a[href^="https://developer.mozilla.org/"]:after {
     content: '';
     display: inline-block;
-    height: 1em;
-    width: 1em;
+    height: .8em;
+    width: .8em;
     background-size: contain;
     background-position: center;
     background-image: url('https://developer.mozilla.org/favicon.ico');
-    vertical-align: super;
-    margin-right: 2px;
+    margin-left: 2px;
 }
 
 /* Header */
@@ -49,7 +47,7 @@ section.tutorial {
 section.tutorial .lesson {
     font-size: 14px;
     padding-right: 1em;
-    line-height: 1.2em;
+    line-height: 1.4em;
 }
 
 @media screen and (max-width : 720px) {
