@@ -1,3 +1,7 @@
+.tutorial-page header {
+    background-image: url('./../../assets/cards/width-overflow.svg');
+}
+
 #myFrame {
     background: #e1c9ff;
     height: 20em;

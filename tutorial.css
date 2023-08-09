@@ -1,0 +1,109 @@
+/* Common */
+code {
+    background-color: #333;
+    color: white;
+    padding-inline: .5ch;
+    border-radius: .2em;
+    font-family: monospace;
+}
+
+a code {
+    background-color: #38346a;
+}
+
+a[href^="https://developer.mozilla.org/"]:before {
+    content: '';
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-size: contain;
+    background-position: center;
+    background-image: url('https://developer.mozilla.org/favicon.ico');
+    vertical-align: super;
+    margin-right: 2px;
+}
+
+/* Header */
+
+.tutorial-page header {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: #1e1f29;
+}
+
+/* Layout */
+
+section.tutorial {
+    display: flex;
+    gap: 1em;
+    padding-block: 1em;
+    box-sizing: border-box;
+}
+
+section.tutorial .lesson {
+    font-size: 14px;
+    padding-right: 1em;
+    line-height: 1.2em;
+}
+
+@media screen and (max-width : 720px) {
+    section.tutorial {
+        flex-wrap: wrap-reverse;
+    }
+}
+
+/* Style editor */
+
+style[contenteditable] {
+    display: inline-block;
+    padding: .5em 1em;
+    margin-right: 1em;
+    min-width: 50ch;
+    height: fit-content;
+    position: sticky;
+    top: 1em;
+    flex: 1;
+
+    white-space: pre;
+    font-family: monospace;
+    font-weight: bold;
+
+    background: #333;
+    color: white;
+    border: 1px solid #eee;
+    border-radius: .5em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transition: .1s ease-out;
+    opacity: .9;
+    overflow-y: auto;
+    resize: vertical;
+}
+
+style[contenteditable]:focus,
+style[contenteditable]:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 70px 100px -20px, rgba(0, 0, 0, 0.5) 0px 30px 60px -30px;
+    opacity: 1;
+    outline: none;
+}
+
+style[contenteditable]::before {
+    content: '/* Other styles are hidden. You can edit CSS directly here to update the page */';
+    color: greenyellow;
+    display: inline-block;
+    width: 100%;
+    flex: 1;
+    padding-right: 1em;
+    margin-bottom: 1em;
+    white-space: normal;
+    font-style: italic;
+}
+
+style[contenteditable]::after {
+    content: 'Alt + Enter for new line';
+    display: inline-block;
+    font-weight: normal;
+    color: grey;
+    font-size: .9em;
+}
