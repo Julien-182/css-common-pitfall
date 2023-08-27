@@ -17,15 +17,16 @@
         <section class="tutorial">
 <style contenteditable>
 #myFrame {
+    display: inline-block;
+    width: 100%;
     border: 1em solid #6e9bed;
     padding: 1em;
-    width: 100%;
 }
 </style>
 
             <div class="lesson">
                 <p>Here is the <a href="#myFrame">situation</a>:</p>
-                <p>You want to have a full width frame with a border to put some content in. You set it a width of 100% but you notice that an horizontal scrollbar appear at the bottom of the screen.</p>
+                <p>You want to have a full width frame with a border to put some content in. You set it a width of 100% width an inline-block display for more flexibility. But you notice that an horizontal scrollbar appear at the bottom of the screen.</p>
                 <p>BUT WHY ???</p>
                 <p>The issue here is that, by default, the width of an element (here <code>&lt;div&gt;</code>) is based on the <em>content</em> size.</p>
                 <p>So both <em>margin</em> and <em>border</em> widths are added to our 100% width. You can try add bigger borders and margins, you'll see that the scrollbar keep growing !</p>
@@ -44,6 +45,10 @@
                     </li>
                 </ul>
                 <p>Now you can say goodbye to unwanted scrollbars ;)</p>
+                <cite>
+                    Bonus: To begin with, the issue would have never happened if the default <code>div</code> display was kept to default (block). Block display will automatically take full width of its container an manage by itself margins and paddings. It is the perfect exemple of useless CSS that can cause harm to your layout.
+                    <br> Test by yourself by removing the width and display property of <code>#myFrame</code>.
+                </cite>
             </div>
         </section>
     </main>

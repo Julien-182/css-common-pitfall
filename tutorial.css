@@ -21,6 +21,23 @@ a[href^="https://developer.mozilla.org/"]:after {
     margin-left: 2px;
 }
 
+cite{
+    display: inline-block;
+    padding-left: 1em;
+    position: relative;
+    background-color: #efefef;
+}
+
+cite::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: .5em;
+    left: 0;
+    top: 0;
+    background-color: #ddd;
+}
+
 /* Header */
 
 .tutorial-page header {
