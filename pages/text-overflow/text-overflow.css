@@ -1,0 +1,28 @@
+.tutorial-page header {
+    background-image: url('./../../assets/cards/text-overflow.svg');
+}
+
+#user-list {
+    padding: 2em;
+}
+
+.card {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+    align-items: center;
+    background-color: white;
+    box-shadow: 1px 1px 3px #999;
+    padding: 1em;
+    border-radius: .4em;
+    margin-block: 1em;
+}
+
+.card .avatar {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    aspect-ratio: 1;
+    background-color: #ddd;
+    border-radius: 100%;
+}

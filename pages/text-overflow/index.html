@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text overflow</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../tutorial.css">
+    <link rel="stylesheet" href="text-overflow.css">
+</head>
+<body class="tutorial-page">
+    <header>
+        <a href="../../" class="back-btn">Back to home</a>
+        <h1>Text overflow</h1>
+    </header>
+    <main>
+        <section class="tutorial">
+<style contenteditable>
+.card {
+    /* Maximum width allowed for design */
+    width: 200px; 
+}
+
+.card .name {
+    /* No effect on long names :( */
+    max-width: 80%; 
+}
+</style>
+
+            <div class="lesson">
+                <p>Here is a <a href="#user-list">user list</a> from your application. </p>
+                <p>The design of the application requires cards to have <code>200px</code> of width. But when using theses cards in real use case, you realize that data can be a lot larger than expected.</p>
+                <p>
+                    For exemple, the 2<sup>nd</sup> card user name wrap and go to a new line. Even worse, the 3<sup>rd</sup> card text goes outside the component !
+                    Let's fix this mess.
+                </p>
+                <p>We can see that the attempt to limit the text size with <code>max-width</code> does not work.</p>
+                <p>
+                    Here are the magic properties to fix text-overflow.
+                    <ul>
+                        <li>
+                            <code>white-space: nowrap;</code> 
+                            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space">white-space</a> property control how space between characters is handled. The value <code>nowrap</code> tells the browser to suppress white-space and line break. We fixed unwanted line breaks.</p>
+                        </li>
+                        <li>
+                            <code>overflow: hidden;</code>
+                            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow">overflow</a> property control what to do with content not fitting in the parent element. The <code>hidden</code> value allow us to hide text initially going outside the card.</p>
+                        </li>
+                        <li>
+                            <code>text-overflow: ellipsis;</code>
+                            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow">text-overflow</a> property manage how to display hidden overflow text content. The value <code>ellipsis</code> makes a more natural look and make the user understand that more text exists outside what is displayed.</p>
+                        </li>
+                    </ul>
+                </p>
+                <p>Now that our design is fixed, I advise to add a <code>title</code> attribute on the text DOM for the sake of <em>accessibility</em>. On hover, users can still see the complete data in a tooltip, managed by your browser. Hover the cards to see.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="user-list">
+        <h2>Person List</h2>
+
+        <div class="card">
+            <span class="avatar"></span>
+            <span class="name" title="John Doe">John Doe</span>
+        </div>
+
+        <div class="card">
+            <span class="avatar"></span>
+            <span class="name" title="Long NameWhithoutspace">Long NameWhithoutspace</span>
+        </div>
+
+        <div class="card">
+            <span class="avatar"></span>
+            <span class="name" title="Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr.">Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr.
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>
